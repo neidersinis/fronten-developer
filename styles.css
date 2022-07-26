@@ -1,10 +1,13 @@
+/* variables css */
 :root {
     --white: #FFFFFF;
     --black: #000000;
     --very-light-pink: #C7C7C7;
     --text-input-field: #F7F7F7;
-    --hospital-green: #ACD9B2;
+    --hospital-green: #55c764;
+    --hospital-green1:   #ACD9B2;
     --sm: 2rem;
+    --smp: 1.5rem;
     --md: 2.5rem;
     --lg: 3rem;
   }
@@ -28,7 +31,7 @@
   }
   .logo {
     width: 100px;
-    font-size: var(--md);
+    font-size: var(--sm);
   }
   .navbar-left ul,
   .navbar-right ul {
@@ -39,8 +42,9 @@
     align-items: center;
     height: 60px;
   }
+  /* navegacion ancla */
   .navbar-left {
-    font-size: var(--sm);
+    font-size: var(--smp);
     display: flex;
   }
   .navbar-left ul {
@@ -59,9 +63,10 @@
     border: 1px solid var(--hospital-green);
     color: var(--hospital-green);
   }
+  /* correo electronico */
   .navbar-email {
     color: var(--very-light-pink);
-    font-size: var(--sm);
+    font-size: var(--smp);
     margin-right: 12px;
     /* pointer-events: ; */
   }
@@ -87,9 +92,10 @@
   .inactive {
     display: none;
   }
-
+/* menu desktop */
   .desktop-menu {
     background-color: var(--white);
+    /* font-size: var(--sm); */
     position: absolute;
     width: 100px;
     height: auto;
@@ -98,14 +104,16 @@
     padding: 20px 20px 0 20px;
     right: 7rem;
     top: 60px;
-    
   }
+
   .desktop-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
   .desktop-menu ul li {
+    font-size: var(--sm);
+
     text-align: end;
   }
   .desktop-menu ul li:nth-child(1),
@@ -121,10 +129,132 @@
     font-size: var(--sm);
   }
   .desktop-menu ul li a {
+    font-size: var(--md);
     color: var(--back);
     text-decoration: none;
     margin-bottom: 20px;
     display: inline-block;
+  }
+
+  .desktop-menu ul li a:hover {
+    color: var(--very-light-pink);
+  }
+
+  /* mobile menu */
+  .mobile-menu {
+    background-color: var(--white);
+    font-size: var(--smp);
+    position: absolute;
+    top: 5rem;
+    padding: 1rem;
+  }
+  .mobile-menu a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    /* margin-bottom: 24px; */
+  }
+  .mobile-menu ul {
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none;
+  }
+  .mobile-menu ul:nth-child(1) {
+    border-bottom: 1px solid var(--very-light-pink);
+  }
+  .mobile-menu ul li {
+    margin-bottom: 24px;
+  }
+  .email {
+    font-size: var(--sm);
+    font-weight: 300 !important;
+  }
+  .sign-out {
+    font-size: var(--sm);
+    color: var(--hospital-green) !important;
+  }
+
+  /* aside carrito (detalle del producto) */
+  .product-detail {
+    background-color: var(--white);
+    width: 360px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+  }
+  .title-container {
+    display: flex;
+  }
+  .title-container img {
+    transform: rotate(180deg);
+    margin-right: 14px;
+  }
+  .title {
+    font-size: var(--lg);
+    font-weight: bold;
+  }
+  .order {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--text-input-field);
+    margin-bottom: 24px;
+    border-radius: 8px;
+    padding: 0 24px;
+  }
+  .order p:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+  }
+  .order p span:nth-child(1) {
+    font-size: var(--md);
+    font-weight: bold;
+  }
+  .order p:nth-child(2) {
+    text-align: end;
+    font-weight: bold;
+  }
+  .shopping-cart {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+  .shopping-cart figure {
+    margin: 0;
+  }
+  .shopping-cart figure img {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  .shopping-cart p:nth-child(2) {
+    color: var(--very-light-pink);
+  }
+  .shopping-cart p:nth-child(3) {
+    font-size: var(--md);
+    font-weight: bold;
+  }
+  .primary-button {
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+  }
+ 
+  @media (max-width: 740px) {
+    .product-detail {
+        width: 100%;
+      }
   }
 
   @media (max-width: 640px) {
@@ -137,4 +267,14 @@
     .navbar-email {
       display: none;
     }
+    .desktop-menu {
+        display: none;
+    }
+    
   }
+
+  @media (min-width: 641px) {
+  .mobile-menu, .burguerMenu {
+    display: none;
+  }
+}
